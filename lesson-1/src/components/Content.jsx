@@ -27,6 +27,7 @@ const Content = () => {
     
   return (
     <main>
+        <h1>useState hooks and functional components</h1>
         <button onClick={counterHandle}>Counter {count}</button>
         <br/>
         <p>{name}</p>
