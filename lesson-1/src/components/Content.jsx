@@ -21,7 +21,8 @@ const Content = () => {
     
     const counterHandle = ()=>{
         setCount(count+1)
-        setCount(count+1)
+        setCount(count+1) 
+        // count is still 0 in the above case
     }
     
   return (
