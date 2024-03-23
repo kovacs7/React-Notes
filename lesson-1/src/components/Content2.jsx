@@ -41,11 +41,12 @@ const handleCheck = (item)=> {
     setItems(updatedItems)
 }
 
+
 const handleDelete = (item) => {
-    // let updatedItems = items.map((myObj)=>{myObj !== item})
-    // setItems(updatedItems)
-    // some kind of error thats why commented it out
-} 
+    let updatedItems = items.filter((myObj) => myObj !== item);
+    setItems(updatedItems);
+}
+
 
   return (
      <main>
@@ -53,19 +54,25 @@ const handleDelete = (item) => {
         <h3>Car Info Book</h3>
         <ul>
             {items.map((item) =>( // remember to use parenthesis instead of curly brackets, it doesnt render the xml.
-                <li className="item" key={item.registration}>
+                <ul className="item" key={item.registration} 
+
+                style={{border: "solid 2px royalblue", display: "flex", direction : "row", marginTop : "10px", gap : "15px", height : "40px", width : "30%", alignItems : "center",
+                justifyContent: "center"}}
+                >
                     <input
                         type="checkbox"
                         onChange={() => handleCheck(item)} // have to create an anonymous fn, because normally writing fn will take it as normal xml element.
                         checked={item.included} // takes the boolean value
                     />
+                    <br/>
                     <label
                         style={item.included ? {textDecoration: "line-through"} : null} // remember it for todo lists
                     >
                     {item.type}
                     </label>
+                    <br/>
                     <button onClick={() => {handleDelete(item)}}>Delete</button>
-                </li>
+                </ul>
             ))}
         </ul>
      </main>
