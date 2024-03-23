@@ -1,6 +1,6 @@
 
 
-const Header = () => {
+const Header = ({title}) => { //you could also use props.title instead of destructuring
 
     const headerStyle = {
         backgroundColor: "royalblue",
@@ -22,7 +22,8 @@ const Header = () => {
 
   return (
     <header style={headerStyle}>
-        <h1>This is my header component</h1>
+        <h1>{title}</h1> 
+        {/* props example */}
         <p>This is my para component</p>
         <button onClick={handleClick}>Click Me1</button>
         {/* don't use oprators inside onClick fn, it will exceute onclick fn immediately */}
@@ -31,6 +32,10 @@ const Header = () => {
         {/* in the above case, you have to use () in fn otherwise its not going to work. You can even pass param in this way if you want to */}
     </header>
   )
+}
+
+Header.defaultProps ={         // you can have lists of default props
+   title : "Default Title"
 }
 
 export default Header

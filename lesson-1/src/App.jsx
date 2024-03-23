@@ -7,7 +7,9 @@ import Header from "./components/Header"
 const App = () => {
   return (
     <div>
-      <Header/><hr/>
+      <Header title="Basics--Functional Components"/><hr/> 
+      {/* prop example */}
+      {/* prop drilling means passing your data from parent to child through props(destructuring), you can also pass it to grandparent to child.*/}
       <Content/><hr/>
       <Content2/><hr/>
       <Footer/><hr/>
